@@ -16,7 +16,10 @@ const bookingRouter = require('./routes/bookRouter')
 app.use('/', loginRouter)
 app.use('/', tourRouter)
 app.use('/', bookingRouter)
-
+app.get('/jobs', (req, res) => {
+    return res.status(200).json('scheduledJobs');
+  });
+  
 
 app.listen(3000, () => {
     console.log(`up and running on 3000`);
